@@ -72,8 +72,8 @@ class ReactiveFollowGap(Node):
         Return index of best point in ranges
 	    Naive: Choose the furthest point within ranges and go there
         """
-        gap_length = end_i - start_i + 1
-        best_idx = start_i + round(gap_length / 2)
+        idx_list = np.where(ranges == np.max(ranges))[0]
+        best_idx = start_i + idx_list[round(len(idx_list)/2)] # find the middle point
         return best_idx
 
     def lidar_callback(self, data):
