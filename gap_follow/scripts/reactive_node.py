@@ -99,7 +99,7 @@ class ReactiveFollowGap(Node):
         steering_angle = (best_point * data.angle_increment) + data.angle_min
 
         if 0 < steering_angle < np.pi/18: # 0 degree < angle < 10 degree
-            velocity = 2.0
+            velocity = 3.0
         elif np.pi/18 <= steering_angle < np.pi/9: # 10 degree <= angle < 20 degree
             velocity = 1.0
         else:
